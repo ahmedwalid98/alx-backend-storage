@@ -1,0 +1,7 @@
+-- create table users
+DROP TABLE users IF EXISTS;
+CREATE TABLE users (
+    id INT NOT NULL AUTO_INCERMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    name VARCHAR(255)
+);
