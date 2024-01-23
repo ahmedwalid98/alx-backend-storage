@@ -1,0 +1,2 @@
+// get all records
+db.school.find().forEach(printjson);
