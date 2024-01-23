@@ -1,0 +1,2 @@
+// find document with name
+db.school.findBy({name: "Holberton school"});
