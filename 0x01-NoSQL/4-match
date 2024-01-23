@@ -1,2 +1,2 @@
 // find document with name
-db.school.findBy({name: "Holberton school"});
+db.school.find({name: "Holberton school"}).forEach(printjson);
