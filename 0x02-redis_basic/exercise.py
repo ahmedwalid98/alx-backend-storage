@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-module
+ Cache class module
 """
 
 import uuid
@@ -9,14 +9,18 @@ import redis
 
 
 class Cache:
-    """class"""
+    """Create a Cache class."""
+
     def __init__(self):
-        """ constructor """
+        """
+        store an instance of the Redis client as a private variable
+        flush the instance using
+        """
         self._redis = redis.Redis()
         self._redis.flushdb()
 
-    def storage(self, data: Union[str, bytes, int, float]) -> str:
-        """ store data to redis """
+    def store(self, data: Union[str, bytes, int, float]) -> str:
+        """set a uuid for a data and cache it"""
         key: str = str(uuid.uuid4())
         self._redis.set(key, data)
         return key
